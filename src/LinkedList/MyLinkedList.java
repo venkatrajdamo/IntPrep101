@@ -27,4 +27,14 @@ public class MyLinkedList {
         }
         System.out.println();
     }
+
+    public SingleNode find(int value){
+        SingleNode c = this.head;
+        while(c != null) {
+            if(c.value == value)
+                return c;
+            c = c.next;
+        }
+        return  null;
+    }
 }

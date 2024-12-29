@@ -33,6 +33,15 @@ public class MyArray{
             return 0;
         return (long) ((sum*1.0)/this.numbers.length);
     }
+
+    public int findNoOfOccurance(int element){
+        int count = 0;
+        for (int number : this.numbers) {
+            if(number == element)
+                count++;
+        }
+        return count;
+    }
 }
 
 class Tester{
