@@ -37,4 +37,20 @@ public class MyLinkedList {
         }
         return  null;
     }
+
+    public SingleNode reverse(){
+        SingleNode h = head;
+        if(h == null) return null;
+        SingleNode t = null;
+        SingleNode n = h;
+        while (h != null){
+            n = h.next;
+            h.next = t;
+            t = h;
+            h = n;
+        }
+        head = t;
+        printList();
+        return h;
+    }
 }

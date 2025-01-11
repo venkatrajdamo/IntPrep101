@@ -1,4 +1,5 @@
 import Arrays.MyArray;
+import Dynamic.FewestCoin;
 import LinkedList.MyLinkedList;
 import LinkedList.SingleNode;
 
@@ -22,8 +23,12 @@ public class Main {
         System.out.println("Searching 6");
         SingleNode t = list.find(6);
         System.out.println("Found : " + t.value);
-
+        list.reverse();
         System.out.println("***************************************************");
+
+        FewestCoin few = new FewestCoin();
+        int[]  coins = {1,2,5};
+        few.findFewestCoin(coins, 11);
 
     }
 }
