@@ -1,5 +1,6 @@
 import Arrays.MyArray;
 import Dynamic.FewestCoin;
+import Graph.TeslaCharger;
 import LinkedList.MyLinkedList;
 import LinkedList.SingleNode;
 
@@ -30,5 +31,14 @@ public class Main {
         int[]  coins = {1,2,5};
         few.findFewestCoin(coins, 11);
 
+        System.out.println("***************************************************");
+        TeslaCharger tesla = new TeslaCharger();
+        int[][] stations = {
+                {10, 5},   // Station at mile 10, swap time 5 mins
+                {20, 8},   // Station at mile 20, swap time 8 mins
+                {35, 3},   // Station at mile 35, swap time 3 mins
+                {50, 6},   // Station at mile 50, swap time 6 mins
+        };
+        System.out.println("Minutes : " + tesla.findFastestRoute(stations, 30, 0, 50));
     }
 }
