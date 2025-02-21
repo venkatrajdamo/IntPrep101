@@ -40,6 +40,7 @@ public class TeslaCharger {
             int node = current[0];
             int d = current[1];
 
+            if (node == end) return d;
             if (d > dist.get(node)) continue;
 
             for (int[] neighbor : graph.get(node)) {
