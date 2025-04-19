@@ -9,41 +9,36 @@ public class MinimumWindowSubstring {
     public String minWindow(String s, String t) {
         HashMap<Character, Integer> tMap = new HashMap<>();
         for(int i =0; i<t.length(); i++){
-            tMap.put(t.charAt(i), tMap.getOrDefault(t.charAt(i), 0) +1);
+            tMap.putIfAbsent(t.charAt(i), 0);
+            tMap.put(t.charAt(i), tMap.get(t.charAt(i))+1);
         }
         HashMap<Character, Integer> rMap = new HashMap<>();
 
 
-        int i =0;
-        int j = i;
+        int l =0;
+        int r = 0;
         String str = "";
         int tl = 0;
         Integer min = Integer.MAX_VALUE;
-        while(i<s.length()){
-            Character sChar = s.charAt(i);
-            if(tMap.containsKey(sChar))
-            {
-                while (i <=j && j< s.length()) {
-                    Character eChar = s.charAt(j);
-                    if(tMap.containsKey(eChar)) {
-                        if (rMap.getOrDefault(eChar, 0) != tMap.get(eChar)) {
-                            rMap.put(eChar, rMap.getOrDefault(eChar, 0) + 1);
-                            tl++;
-                        }
-                        if(tl == t.length()){
-                            rMap.put(sChar, rMap.get(sChar) - 1);
-                            tl--;
-                            if(j - i < min) {
-                                min = Math.min(min, j - i);
-                                str =  s.substring(i,j);
-                            }
-                            break;
-                        }
-                    }
-                    j++;
+        while(r<s.length()){
+            Character sChar = s.charAt(r);
+            rMap.putIfAbsent(sChar, 0);
+            rMap.put(sChar, rMap.get(sChar)+1);
+            if(tMap.containsKey(sChar) && rMap.get(sChar).intValue() == tMap.get(sChar).intValue())
+                tl++;
+            while(l<r && tl == tMap.size()){
+                if(min > r - l + 1){
+                    min = r - l + 1;
+                    str = s.substring(l,r+1);
+                }
+                Character lChar = s.charAt(l);
+                l++;
+                rMap.put(lChar, rMap.get(lChar) - 1);
+                if(tMap.containsKey(lChar) && rMap.get(lChar) < tMap.get(lChar)) {
+                    tl--;
                 }
             }
-            i++;
+            r++;
         }
 
         return str;
