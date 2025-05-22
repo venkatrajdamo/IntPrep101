@@ -25,16 +25,16 @@ public class CloneGraph {
         Queue<Node> q = new LinkedList<>();
         if(node == null) return null;
         q.offer(node);
-
+        c.putIfAbsent(node.val, new Node(node.val));
         while(!q.isEmpty()){
             Node o = q.poll();
-            Node nn = c.getOrDefault(o.val, new Node(o.val));
-            c.putIfAbsent(o.val, nn);
+            Node nn = c.get(o.val);
             for(Node child: o.neighbors){
                 Node cn = c.getOrDefault(child.val, new Node(child.val));
                 nn.neighbors.add(cn);
-                c.putIfAbsent(child.val, cn);
+
                 if(!c.containsKey(child.val)){
+                    c.putIfAbsent(child.val, cn);
                     q.offer(child);
                 }
             }
