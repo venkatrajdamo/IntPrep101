@@ -1,3 +1,17 @@
+/*Count Subarrays With Exactly K Distinct Integers
+
+Given an array of integers nums and an integer k, return the number of subarrays with exactly k distinct integers.
+Example
+
+Input:
+nums = [1,2,1,2,3], k = 2
+Output:
+7
+
+Explanation:
+The 7 subarrays with exactly 2 distinct integers are:
+[1,2], [2,1], [1,2], [2,3], [1,2,1], [2,1,2], [2,3]
+ */
 package Arrays;
 
 import java.util.HashMap;
