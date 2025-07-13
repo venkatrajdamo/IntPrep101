@@ -8,7 +8,7 @@ public class MaximumProductSubarray {
         for (int i = 1; i < nums.length; i++) {
             int t = cmax;
             cmax = Math.max(nums[i], Math.max(nums[i] * cmax, nums[i] * cmin));
-            cmin = Math.min(nums[i], Math.max(nums[i] * t, nums[i] * cmin));
+            cmin = Math.min(nums[i], Math.min(nums[i] * t, nums[i] * cmin));
             pmax = Math.max(pmax, cmax);
         }
         return pmax;
