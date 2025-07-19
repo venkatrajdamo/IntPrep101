@@ -12,7 +12,7 @@ Explanation:
 The 7 subarrays with exactly 2 distinct integers are:
 [1,2], [2,1], [1,2], [2,3], [1,2,1], [2,1,2], [2,3]
  */
-package Arrays;
+package Subarray;
 
 import java.util.HashMap;
 

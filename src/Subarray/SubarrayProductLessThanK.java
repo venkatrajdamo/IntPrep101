@@ -13,7 +13,7 @@ Input: nums = [1,2,3], k = 0
 Output: 0
 */
 
-package Arrays;
+package Subarray;
 
 public class SubarrayProductLessThanK {
     public int numSubarrayProductLessThanK(int[] nums, int k) {

@@ -1,7 +1,7 @@
 import Arrays.MyArray;
 import Dynamic.FewestCoin;
-import Graph.TeslaCharger;
-import Graph.TeslaChargerMinStation;
+import Greedy.TeslaCharger;
+import Greedy.TeslaChargerMinStation;
 import LinkedList.MyLinkedList;
 import LinkedList.SingleNode;
 

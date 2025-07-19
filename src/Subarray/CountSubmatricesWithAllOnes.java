@@ -1,4 +1,4 @@
-package Arrays;
+package Subarray;
 
 public class CountSubmatricesWithAllOnes {
     public int numSubmat(int[][] mat) {
